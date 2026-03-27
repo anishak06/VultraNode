@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000; /* Pure Black as requested */
+    font-family: 'Space Grotesk', sans-serif;
+    color: #ffffff;
+}
+
+/* Subtle background glow effect using a fixed pseudo-element */
+.ambient-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(0, 229, 212, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Ensure the overlay is positioned below the central 3D logo */
+.content-overlay {
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none; /* Let pointer events pass to canvas */
+}
+
+.tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.9;
+    margin: 0 0 30px 0;
+    text-shadow: 0 0 10px rgba(0, 229, 212, 0.3);
+}
+
+.tagline span {
+    color: #00E5D4;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(0, 229, 212, 0.6);
+}
+
+.connect-btn {
+    pointer-events: auto; /* Re-enable clicks for the button */
+    background: transparent;
+    color: #00E5D4;
+    border: 1px solid #009C91;
+    padding: 14px 40px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 0 15px rgba(0, 156, 145, 0.15), inset 0 0 10px rgba(0, 156, 145, 0.1);
+}
+
+.connect-btn:hover {
+    background: rgba(0, 229, 212, 0.05);
+    border-color: #00E5D4;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(0, 229, 212, 0.4), inset 0 0 15px rgba(0, 229, 212, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Header Styles */
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.site-header .logo {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.site-header .logo span {
+    color: #00E5D4;
+}
+
+.site-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    opacity: 0.8;
+}
+
+.site-nav a:hover {
+    color: #00E5D4;
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(0, 229, 212, 0.5);
+}
+
+/* Footer Styles */
+.site-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    pointer-events: auto;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.footer-left {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    letter-spacing: 0.05em;
+}
+
+.footer-right a {
+    color: #aaaaaa;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: #00E5D4;
+}
